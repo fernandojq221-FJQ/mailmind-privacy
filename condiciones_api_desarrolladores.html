@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Terms of Use — Mail Mind IA</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem; color: #1a1a1a; line-height: 1.7; }
+    h1 { font-size: 28px; font-weight: 500; margin-bottom: 0.25rem; }
+    h2 { font-size: 18px; font-weight: 500; margin-top: 2rem; }
+    .meta { color: #888; font-size: 13px; margin-bottom: 2rem; }
+    .intro { background: #f5f5f3; border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 2rem; font-size: 14px; color: #555; }
+    .highlight { background: #fee2e2; border-left: 3px solid #ef4444; border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; margin: 1rem 0; font-size: 14px; }
+    .allowed { background: #dcfce7; border-left: 3px solid #22c55e; border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; margin: 1rem 0; font-size: 14px; }
+    .contacto { background: #f5f5f3; border-radius: 8px; padding: 1rem 1.25rem; margin-top: 0.5rem; font-size: 14px; }
+    ul { padding-left: 1.25rem; }
+    a { color: #185FA5; }
+    code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    footer { font-size: 13px; color: #888; margin-top: 2rem; border-top: 1px solid #eee; padding-top: 1rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 1rem 0; }
+    th { background: #f5f5f3; text-align: left; padding: 8px 12px; font-weight: 500; }
+    td { padding: 8px 12px; border-bottom: 1px solid #eee; }
+  </style>
+</head>
+<body>
+  <h1>API Terms of Use — Mail Mind IA</h1>
+  <p class="meta">Last updated: May 23, 2026 · <a href="https://mail-mind-ia.lovable.app">mail-mind-ia.lovable.app</a></p>
+
+  <div class="intro">
+    These API Terms of Use govern access to the Mail Mind IA API and apply to all developers, companies, and individuals who integrate with our platform. By accessing the API, you agree to these terms.
+  </div>
+
+  <h2>1. API access and authentication</h2>
+  <p>Access to the Mail Mind IA API requires a valid API key issued upon registration. API keys are personal, non-transferable, and must be kept confidential. You are responsible for all activity that occurs under your API key. Mail Mind IA reserves the right to revoke API keys at any time for violation of these terms.</p>
+
+  <h2>2. Permitted use</h2>
+  <div class="allowed">
+    <strong>Allowed:</strong> Building applications that trigger email processing, retrieve usage metrics, manage user subscriptions, or display processed invoice data on behalf of authenticated end users who have granted explicit OAuth consent.
+  </div>
+  <ul>
+    <li>Integrating Mail Mind IA into your own SaaS platform or internal tools</li>
+    <li>Automating the OAuth onboarding flow for your end users</li>
+    <li>Reading aggregated metrics (emails processed, invoices detected) for your users</li>
+    <li>Managing subscription plans and usage limits programmatically</li>
+  </ul>
+
+  <h2>3. Prohibited use</h2>
+  <div class="highlight">
+    <strong>Strictly prohibited:</strong> Any use that violates Google's API Services User Data Policy, accesses user data without explicit consent, or circumvents Mail Mind IA's rate limits or authentication mechanisms.
+  </div>
+  <ul>
+    <li>Accessing, storing, or processing Gmail content beyond what is necessary for the stated purpose</li>
+    <li>Reselling API access to third parties without a written agreement with Mail Mind IA</li>
+    <li>Using the API to train machine learning models on user email data</li>
+    <li>Scraping, reverse engineering, or attempting to extract Mail Mind IA's underlying AI models or prompts</li>
+    <li>Bypassing rate limits through multiple API keys or accounts</li>
+    <li>Using the API in any way that violates applicable law or Google's Terms of Service</li>
+  </ul>
+
+  <h2>4. Google API compliance</h2>
+  <p>As a developer integrating with Mail Mind IA, you acknowledge that the service relies on Google APIs (Gmail, Calendar, Drive). Your integration must comply with:</p>
+  <ul>
+    <li><a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a></li>
+    <li><a href="https://policies.google.com/terms">Google Terms of Service</a></li>
+    <li>The Limited Use requirements for sensitive scopes (<code>gmail.modify</code>, <code>calendar.events</code>, <code>drive.file</code>)</li>
+  </ul>
+  <p>You must ensure that your end users are informed about how their Google data is used and have granted explicit consent before initiating the OAuth flow.</p>
+
+  <h2>5. Rate limits</h2>
+  <table>
+    <tr><th>Plan</th><th>API calls / minute</th><th>Users supported</th></tr>
+    <tr><td>Free tier</td><td>10</td><td>Up to 5 end users</td></tr>
+    <tr><td>Pro</td><td>100</td><td>Up to 100 end users</td></tr>
+    <tr><td>Enterprise</td><td>Custom</td><td>Unlimited</td></tr>
+  </table>
+  <p>Exceeding rate limits will result in <code>429 Too Many Requests</code> responses. Persistent abuse may result in API key suspension.</p>
+
+  <h2>6. Data handling obligations</h2>
+  <p>Developers integrating the Mail Mind IA API must:</p>
+  <ul>
+    <li>Never store Gmail message content retrieved through the API beyond the immediate processing session</li>
+    <li>Implement appropriate security measures to protect OAuth tokens and API keys at rest and in transit</li>
+    <li>Maintain a publicly accessible Privacy Policy that accurately describes how end user data is handled</li>
+    <li>Notify Mail Mind IA of any data breach affecting end user data within 72 hours of discovery</li>
+    <li>Delete all user data upon account termination or upon user request within 30 days</li>
+  </ul>
+
+  <h2>7. Intellectual property</h2>
+  <p>Mail Mind IA grants developers a limited, non-exclusive, non-transferable license to use the API solely for the purposes described in these terms. No ownership rights over Mail Mind IA's technology, AI models, or data are transferred. Developers retain ownership of their own applications built on top of the API.</p>
+
+  <h2>8. Liability and warranties</h2>
+  <p>The Mail Mind IA API is provided "as is" without warranties of any kind. Mail Mind IA does not guarantee 100% uptime or accuracy of AI-based invoice detection. Developers are responsible for implementing appropriate error handling and user-facing messaging when the API is unavailable or returns unexpected results.</p>
+
+  <h2>9. Termination</h2>
+  <p>Mail Mind IA may suspend or terminate API access immediately and without notice if a developer violates these terms, abuses the API, or engages in activity that harms Mail Mind IA, its users, or third parties. Developers may terminate their integration at any time by deleting their API key and revoking OAuth tokens for their end users.</p>
+
+  <h2>10. Changes to these terms</h2>
+  <p>Mail Mind IA reserves the right to modify these API Terms of Use at any time. Developers will be notified of significant changes via email at least 30 days in advance. Continued use of the API after the effective date constitutes acceptance of the updated terms.</p>
+
+  <h2>11. Contact</h2>
+  <div class="contacto">
+    <strong>Mail Mind IA — Developer Relations</strong><br>
+    Website: <a href="https://mail-mind-ia.lovable.app">mail-mind-ia.lovable.app</a><br>
+    Email: fernandojq221@gmail.com
+  </div>
+
+  <footer>These API Terms of Use apply in addition to the <a href="https://fernandojq221-fjq.github.io/mailmind-privacy">Privacy Policy</a> and the end-user Terms of Service. In case of conflict, these API terms take precedence for developer integrations.</footer>
+</body>
+</html>
